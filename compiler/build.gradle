@@ -118,6 +118,7 @@ binaries.all {
     cppCompiler.args "--std=c++0x"
     addEnvArgs("CXXFLAGS", cppCompiler.args)
     addEnvArgs("CPPFLAGS", cppCompiler.args)
+    linker.args "-L/usr/local/lib"
     if (osdetector.os == "osx") {
       cppCompiler.args "-mmacosx-version-min=10.7", "-stdlib=libc++"
       addLibraryIfNotLinked('protoc', linker.args)
